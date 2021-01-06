@@ -1,4 +1,4 @@
-package com.tpIntergiciel.kafka.springbootm2tnsiFi;
+package com.tpIntergiciel.kafka.springbootm2tnsiFi.kafka.consumers;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
