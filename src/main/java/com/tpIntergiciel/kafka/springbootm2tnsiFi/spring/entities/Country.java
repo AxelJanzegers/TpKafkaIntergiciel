@@ -1,103 +1,136 @@
 package com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
+@Table(name="countries")
 public class Country {
 
     @Id
-    @GeneratedValue
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
 
-    private String countryName;
-    private String countryCode;
-    private String slug;
-    private int newConfirmed;
-    private int totalConfirmed;
-    private int newDeaths;
-    private int totalDeaths;
-    private int newRecovered;
-    private int totalRecovered;
+    private String Country;
+    private String CountryCode;
+    private String Slug;
+    private int NewConfirmed;
+    private int TotalConfirmed;
+    private int NewDeaths;
+    private int TotalDeaths;
+    private int NewRecovered;
+    private int TotalRecovered;
+    private Date Date;
 
-    public String getId() {
+    public Country() { }
+
+    public Country(String Country, String CountryCode, String Slug, int NewConfirmed, int TotalConfirmed, int NewDeaths, int TotalDeaths, int NewRecovered, int TotalRecovered, Date Date) {
+        this.Country = Country;
+        this.CountryCode = CountryCode;
+        this.Slug = Slug;
+        this.NewConfirmed = NewConfirmed;
+        this.TotalConfirmed = TotalConfirmed;
+        this.NewDeaths = NewDeaths;
+        this.TotalDeaths = TotalDeaths;
+        this.NewRecovered = NewRecovered;
+        this.TotalRecovered = TotalRecovered;
+        this.Date = Date;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCountry() {
+        return Country;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountry(String Country) {
+        this.Country = Country;
     }
 
     public String getCountryCode() {
-        return countryCode;
+        return CountryCode;
     }
 
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setCountryCode(String CountryCode) {
+        this.CountryCode = CountryCode;
     }
 
     public String getSlug() {
-        return slug;
+        return Slug;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
+    public void setSlug(String Slug) {
+        this.Slug = Slug;
     }
 
     public int getNewConfirmed() {
-        return newConfirmed;
+        return NewConfirmed;
     }
 
-    public void setNewConfirmed(int newConfirmed) {
-        this.newConfirmed = newConfirmed;
+    public void setNewConfirmed(int NewConfirmed) {
+        this.NewConfirmed = NewConfirmed;
     }
 
     public int getTotalConfirmed() {
-        return totalConfirmed;
+        return TotalConfirmed;
     }
 
-    public void setTotalConfirmed(int totalConfirmed) {
-        this.totalConfirmed = totalConfirmed;
+    public void setTotalConfirmed(int TotalConfirmed) {
+        this.TotalConfirmed = TotalConfirmed;
     }
 
     public int getNewDeaths() {
-        return newDeaths;
+        return NewDeaths;
     }
 
-    public void setNewDeaths(int newDeaths) {
-        this.newDeaths = newDeaths;
+    public void setNewDeaths(int NewDeaths) {
+        this.NewDeaths = NewDeaths;
     }
 
     public int getTotalDeaths() {
-        return totalDeaths;
+        return TotalDeaths;
     }
 
-    public void setTotalDeaths(int totalDeaths) {
-        this.totalDeaths = totalDeaths;
+    public void setTotalDeaths(int TotalDeaths) {
+        this.TotalDeaths = TotalDeaths;
     }
 
     public int getNewRecovered() {
-        return newRecovered;
+        return NewRecovered;
     }
 
-    public void setNewRecovered(int newRecovered) {
-        this.newRecovered = newRecovered;
+    public void setNewRecovered(int NewRecovered) {
+        this.NewRecovered = NewRecovered;
     }
 
     public int getTotalRecovered() {
-        return totalRecovered;
+        return TotalRecovered;
     }
 
-    public void setTotalRecovered(int totalRecovered) {
-        this.totalRecovered = totalRecovered;
+    public void setTotalRecovered(int TotalRecovered) {
+        this.TotalRecovered = TotalRecovered;
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id=" + id +
+                ", Country='" + Country + '\'' +
+                ", CountryCode='" + CountryCode + '\'' +
+                ", Slug='" + Slug + '\'' +
+                ", NewConfirmed=" + NewConfirmed +
+                ", TotalConfirmed=" + TotalConfirmed +
+                ", NewDeaths=" + NewDeaths +
+                ", TotalDeaths=" + TotalDeaths +
+                ", NewRecovered=" + NewRecovered +
+                ", TotalRecovered=" + TotalRecovered +
+                ", Date=" + Date +
+                '}';
     }
 }

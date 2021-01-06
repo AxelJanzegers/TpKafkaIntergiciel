@@ -2,76 +2,100 @@ package com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Global {
 
     @Id
-    @GeneratedValue
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
 
-    private int newConfirmed;
-    private int totalConfirmed;
-    private int newDeaths;
-    private int totalDeaths;
-    private int newRecovered;
-    private int totalRecovered;
+    private int NewConfirmed;
+    private int TotalConfirmed;
+    private int NewDeaths;
+    private int TotalDeaths;
+    private int NewRecovered;
+    private int TotalRecovered;
 
-    public void setId(String id) {
+    public Global() { }
+
+    public Global(int NewConfirmed, int TotalConfirmed, int NewDeaths, int TotalDeaths, int NewRecovered, int TotalRecovered) {
+        this.NewConfirmed = NewConfirmed;
+        this.TotalConfirmed = TotalConfirmed;
+        this.NewDeaths = NewDeaths;
+        this.TotalDeaths = TotalDeaths;
+        this.NewRecovered = NewRecovered;
+        this.TotalRecovered = TotalRecovered;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
     public int getNewConfirmed() {
-        return newConfirmed;
+        return NewConfirmed;
     }
 
-    public void setNewConfirmed(int newConfirmed) {
-        this.newConfirmed = newConfirmed;
+    public void setNewConfirmed(int NewConfirmed) {
+        this.NewConfirmed = NewConfirmed;
     }
 
     public int getTotalConfirmed() {
-        return totalConfirmed;
+        return TotalConfirmed;
     }
 
-    public void setTotalConfirmed(int totalConfirmed) {
-        this.totalConfirmed = totalConfirmed;
+    public void setTotalConfirmed(int TotalConfirmed) {
+        this.TotalConfirmed = TotalConfirmed;
     }
 
     public int getNewDeaths() {
-        return newDeaths;
+        return NewDeaths;
     }
 
-    public void setNewDeaths(int newDeaths) {
-        this.newDeaths = newDeaths;
+    public void setNewDeaths(int NewDeaths) {
+        this.NewDeaths = NewDeaths;
     }
 
     public int getTotalDeaths() {
-        return totalDeaths;
+        return TotalDeaths;
     }
 
-    public void setTotalDeaths(int totalDeaths) {
-        this.totalDeaths = totalDeaths;
+    public void setTotalDeaths(int TotalDeaths) {
+        this.TotalDeaths = TotalDeaths;
     }
 
     public int getNewRecovered() {
-        return newRecovered;
+        return NewRecovered;
     }
 
-    public void setNewRecovered(int newRecovered) {
-        this.newRecovered = newRecovered;
+    public void setNewRecovered(int NewRecovered) {
+        this.NewRecovered = NewRecovered;
     }
 
     public int getTotalRecovered() {
-        return totalRecovered;
+        return TotalRecovered;
     }
 
-    public void setTotalRecovered(int totalRecovered) {
-        this.totalRecovered = totalRecovered;
+    public void setTotalRecovered(int TotalRecovered) {
+        this.TotalRecovered = TotalRecovered;
     }
 
+    @Override
+    public String toString() {
+        return "Global{" +
+                "id='" + id + '\'' +
+                ", NewConfirmed=" + NewConfirmed +
+                ", TotalConfirmed=" + TotalConfirmed +
+                ", NewDeaths=" + NewDeaths +
+                ", TotalDeaths=" + TotalDeaths +
+                ", NewRecovered=" + NewRecovered +
+                ", TotalRecovered=" + TotalRecovered +
+                '}';
+    }
 }
