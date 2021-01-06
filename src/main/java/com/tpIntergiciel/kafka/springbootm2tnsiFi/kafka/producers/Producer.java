@@ -1,4 +1,4 @@
-package com.tpIntergiciel.kafka.springbootm2tnsiFi;
+package com.tpIntergiciel.kafka.springbootm2tnsiFi.kafka.producers;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Autowired;
