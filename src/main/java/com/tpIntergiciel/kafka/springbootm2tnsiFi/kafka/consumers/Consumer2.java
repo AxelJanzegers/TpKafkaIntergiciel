@@ -38,6 +38,7 @@ public class Consumer2 {
                 System.out.println("Average deaths: "+globalService.averageDeaths());
                 break;
             case "get_countries_deaths_percent":
+                System.out.println("Average deaths/country: "+countryService.getDeathPercent(commandTab[1])+"%");
                 break;
             case "help":
                 System.out.println(" -- COMMANDES -- :\n" +
