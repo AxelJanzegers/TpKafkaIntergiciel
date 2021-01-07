@@ -13,8 +13,15 @@ public class GlobalService {
     @Autowired
     private GlobalRepository globalRepository;
 
+
+    public Global getGlobal() {
+        return globalRepository.findById(1).get();
+    }
+
     @Transactional
     public int createGlobal(Global global) {
         return globalRepository.save(global).getId();
     }
+
+
 }

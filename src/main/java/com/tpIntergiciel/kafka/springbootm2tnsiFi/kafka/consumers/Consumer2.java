@@ -1,15 +1,27 @@
 package com.tpIntergiciel.kafka.springbootm2tnsiFi.kafka.consumers;
 
+import com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.services.CountryService;
+import com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.services.GlobalService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class Consumer2 {
+
+    @Autowired
+    private CountryService countryService;
+    @Autowired
+    private GlobalService globalService;
+
     @KafkaListener(topics = "request_topic",groupId = "group_id")
     public void consumeMessage(String command) {
         System.out.println("Commande envoyée : " + command);
         switch (command.toLowerCase()) {
             case "get_global_values" :
+                System.out.println(globalService.getGlobal().toString());
                 break;
             case "get_country_values":
                 break;
