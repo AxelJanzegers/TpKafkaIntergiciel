@@ -4,7 +4,7 @@ Projet réalisé par CAGNON Lilian, JANZEGERS Axel et QUIQUE Arthur
 M2 TNSI FI 2020/2021
 
 Ce projet nécessite :
-  - que Zookeeper et le serveur Kafka soient ouverts
+  - que Zookeeper qu'un serveur Kafka soient ouverts
   - une base de données PosteGreSQL, ainsi qu'une database nommée "tp_kafka" (modifiable dans le fichier application.properties)
   - que le mot de passe de PosteGreSQL soit changé dans le fichier application.properties
 
