@@ -119,18 +119,15 @@ public class Country {
 
     @Override
     public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", Country='" + Country + '\'' +
-                ", CountryCode='" + CountryCode + '\'' +
-                ", Slug='" + Slug + '\'' +
-                ", NewConfirmed=" + NewConfirmed +
-                ", TotalConfirmed=" + TotalConfirmed +
-                ", NewDeaths=" + NewDeaths +
-                ", TotalDeaths=" + TotalDeaths +
-                ", NewRecovered=" + NewRecovered +
-                ", TotalRecovered=" + TotalRecovered +
-                ", Date=" + Date +
-                '}';
+        return "Country = '" + Country +
+                "\n- CountryCode = '" + CountryCode +
+                "\n- Slug = '" + Slug +
+                "\n- NewConfirmed = " + NewConfirmed +
+                "\n- TotalConfirmed = " + TotalConfirmed +
+                "\n- NewDeaths = " + NewDeaths +
+                "\n- TotalDeaths = " + TotalDeaths +
+                "\n- NewRecovered = " + NewRecovered +
+                "\n- TotalRecovered = " + TotalRecovered +
+                "\n- Date = " + Date + "\n";
     }
 }

@@ -17,9 +17,8 @@ public class Producer2 {
     }
 
     @Bean
-    public NewTopic createTopic(){
+    public NewTopic createRequestTopic(){
 
         return new NewTopic(TOPIC,1,(short) 1);
     }
-
 }
