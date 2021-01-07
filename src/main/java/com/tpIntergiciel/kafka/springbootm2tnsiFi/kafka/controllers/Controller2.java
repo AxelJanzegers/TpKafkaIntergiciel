@@ -21,7 +21,7 @@ public class Controller2 {
     private GlobalService globalService;
 
     @PostMapping("/request")
-    public void messageToTopic(@RequestParam("req") String command){
+    public void messageToTopic(@RequestParam("req") String command) {
         this.producer.sendMessage(command);
     }
 }
