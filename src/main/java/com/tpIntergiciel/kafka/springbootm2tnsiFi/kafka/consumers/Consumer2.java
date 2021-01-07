@@ -21,11 +21,15 @@ public class Consumer2 {
     public void consumeMessage(String command) throws Exception {
         System.out.println(command);
         HttpURLCalls http = new HttpURLCalls();
-        switch (command.toLowerCase()) {
+
+        String commandTab[] = command.split(" ");
+
+        switch (commandTab[0].toLowerCase()) {
             case "get_global_values" :
                 http.sendGet(command);
                 break;
             case "get_country_values":
+                System.out.println(countryService.getCountry(commandTab[1]).toString());
                 break;
             case "get_confirmed_avg":
                 break;

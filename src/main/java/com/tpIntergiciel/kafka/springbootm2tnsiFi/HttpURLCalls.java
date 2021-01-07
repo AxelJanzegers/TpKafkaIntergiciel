@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 
 public class HttpURLCalls {
 
@@ -66,10 +67,11 @@ public class HttpURLCalls {
     }
 
     public void sendPostWithParameter(String command, String param) throws Exception {
+        param = param.substring(0,1).toUpperCase() + param.substring(1).toLowerCase();
         String url = this.local + "request_param?req=" + command + "&param=" + param;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
+        System.out.println(url);
         //add reuqest header
         con.setRequestMethod("POST");
 
