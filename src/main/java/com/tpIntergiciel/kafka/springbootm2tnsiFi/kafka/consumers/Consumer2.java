@@ -32,8 +32,10 @@ public class Consumer2 {
                 System.out.println(countryService.getCountry(commandTab[1]).toString());
                 break;
             case "get_confirmed_avg":
+                System.out.println("Average confirmed: "+globalService.averageConfirmed());
                 break;
             case "get_deaths_avg":
+                System.out.println("Average deaths: "+globalService.averageDeaths());
                 break;
             case "get_countries_deaths_percent":
                 break;
