@@ -34,11 +34,9 @@ public class CountryService {
     public HashMap<String, Float> getDeathPercent(String countryName){
         float result = -1;
         HashMap<String, Float> MapDeaths = new HashMap<String, Float>();
-        var countries = (List<Country>) countryRepository.findAll();
-        for(Country c : countries) {
-            result = (float) c.getTotalDeaths() / (float) c.getTotalConfirmed();
-            MapDeaths.put(c.getCountry(), result);
-        }
+        Country c = getCountry(countryName);
+        result = (float) c.getTotalDeaths() / (float) c.getTotalConfirmed();
+        MapDeaths.put(countryName, result);
         return MapDeaths;
     }
 

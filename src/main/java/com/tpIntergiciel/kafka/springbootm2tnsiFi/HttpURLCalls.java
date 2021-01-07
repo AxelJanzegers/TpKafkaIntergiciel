@@ -66,6 +66,35 @@ public class HttpURLCalls {
         in.close();
     }
 
+    public void sendPostRequest(String command) throws Exception {
+        String url = this.local + command;
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        //add reuqest header
+        con.setRequestMethod("POST");
+
+
+        //Send post request
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.flush();
+        wr.close();
+
+        int responseCode = con.getResponseCode();
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+    }
+
+
     public void sendPostWithParameter(String command, String param) throws Exception {
         param = param.substring(0,1).toUpperCase() + param.substring(1).toLowerCase();
         String url = this.local + "request_param?req=" + command + "&param=" + param;
