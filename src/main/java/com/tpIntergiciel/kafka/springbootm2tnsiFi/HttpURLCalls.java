@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class HttpURLCalls {
 
-    private String local = "http://localhost:8080/";
+    private String local = "http://localhost:8080/request?req=";
 
     public HttpURLCalls() {
 
