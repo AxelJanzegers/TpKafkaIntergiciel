@@ -26,7 +26,14 @@ public class SpringbootM2tnsiFiApplication implements CommandLineRunner {
 			Scanner sc = new Scanner(System.in);
 			command = sc.nextLine();
 			HttpURLCalls call = new HttpURLCalls();
-			call.sendPost(command);
+			if (command.contains(" ")) {
+				String[] commands = command.split(" ");
+				call.sendPostWithParameter(commands[0], commands[1]);
+			}
+			else {
+				call.sendPost(command);
+			}
+
 		}
 
 	}

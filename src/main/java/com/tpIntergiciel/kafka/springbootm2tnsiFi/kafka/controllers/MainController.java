@@ -32,6 +32,11 @@ public class MainController {
         this.producer2.sendMessage(command);
     }
 
+    @PostMapping("/request_param")
+    public void messageToTopicWithParam(@RequestParam("req") String command, @RequestParam("param") String country) {
+        this.producer2.sendMessage(command + " " + country);
+    }
+
     @GetMapping("/get_global_values")
     public void getGlobalValuesToTopic() {
         this.producer3.sendMessage(globalService.getGlobal().toString());

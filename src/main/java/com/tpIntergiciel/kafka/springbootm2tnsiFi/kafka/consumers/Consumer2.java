@@ -19,6 +19,7 @@ public class Consumer2 {
 
     @KafkaListener(topics = "request_topic",groupId = "group_id")
     public void consumeMessage(String command) throws Exception {
+        System.out.println(command);
         HttpURLCalls http = new HttpURLCalls();
         switch (command.toLowerCase()) {
             case "get_global_values" :
