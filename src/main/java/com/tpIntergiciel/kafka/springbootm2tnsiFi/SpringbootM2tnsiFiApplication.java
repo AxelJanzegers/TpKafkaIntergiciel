@@ -43,7 +43,7 @@ public class SpringbootM2tnsiFiApplication implements CommandLineRunner {
 		}
 	}
 
-	@Scheduled(initialDelay = 1000, fixedDelay = 2000L)
+	@Scheduled(initialDelay = (1000L*60*60), fixedDelay = (1000L*60*60))
 	void someJob() throws Exception {
 		//System.out.println("date :" + new Date());
 		//HttpURLCalls call = new HttpURLCalls();
