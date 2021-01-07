@@ -16,15 +16,9 @@ public class Consumer3 {
     @Autowired
     private GlobalService globalService;
 
-    @KafkaListener(topics = "json_topic", groupId = "group_id")
+    @KafkaListener(topics = "result_topic", groupId = "group_id")
     public void consumeMessage(String msg) {
-        /*
-         * Ajout dans la bdd
-         */
-        Gson gson = new Gson();
-        JsonMessage json = gson.fromJson(msg, JsonMessage.class);
-        globalService.createGlobal(json.getGlobal());
-        countryService.createCountries(json.getCountries());
+        System.out.println(msg);
     }
 
 }

@@ -8,13 +8,13 @@ import java.net.URL;
 
 public class HttpURLCalls {
 
-    private String local = "http://localhost:8080/request?req=";
+    private String local = "http://localhost:8080/";
 
     public HttpURLCalls() {
 
     }
 
-    private void sendGet(String command) throws Exception {
+    public void sendGet(String command) throws Exception {
 
         String url = this.local + command;
 
@@ -38,7 +38,7 @@ public class HttpURLCalls {
     }
 
     public void sendPost(String command) throws Exception {
-        String url = this.local + command;
+        String url = this.local + "request?req=" + command;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 

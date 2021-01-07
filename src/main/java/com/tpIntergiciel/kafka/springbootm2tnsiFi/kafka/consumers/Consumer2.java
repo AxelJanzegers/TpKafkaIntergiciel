@@ -1,5 +1,6 @@
 package com.tpIntergiciel.kafka.springbootm2tnsiFi.kafka.consumers;
 
+import com.tpIntergiciel.kafka.springbootm2tnsiFi.HttpURLCalls;
 import com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.services.CountryService;
 import com.tpIntergiciel.kafka.springbootm2tnsiFi.spring.services.GlobalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,11 @@ public class Consumer2 {
     private GlobalService globalService;
 
     @KafkaListener(topics = "request_topic",groupId = "group_id")
-    public void consumeMessage(String command) {
-        System.out.println("Commande envoyée : " + command);
+    public void consumeMessage(String command) throws Exception {
+        HttpURLCalls http = new HttpURLCalls();
         switch (command.toLowerCase()) {
             case "get_global_values" :
-                System.out.println(globalService.getGlobal().toString());
+                http.sendGet(command);
                 break;
             case "get_country_values":
                 break;

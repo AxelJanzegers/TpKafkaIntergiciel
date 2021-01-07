@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
     @Service
     public class Producer3 {
-        private static final String TOPIC = "json_topic";
+        private static final String TOPIC = "result_topic";
         @Autowired
         private KafkaTemplate<String,String> kafkaTemplate;
 
@@ -17,8 +17,7 @@ import org.springframework.stereotype.Service;
         }
 
         @Bean
-        public NewTopic createTopic(){
-
+        public NewTopic createResultTopic(){
             return new NewTopic(TOPIC,1,(short) 1);
         }
 }
