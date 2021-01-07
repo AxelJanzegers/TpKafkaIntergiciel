@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class Controller2 {
 
-    private final Producer2 producer;
+    private Producer2 producer;
 
     @Autowired
     public Controller2(Producer2 producer) {

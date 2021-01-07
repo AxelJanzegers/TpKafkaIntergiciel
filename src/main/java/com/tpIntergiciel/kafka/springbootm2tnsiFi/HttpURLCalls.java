@@ -14,6 +14,29 @@ public class HttpURLCalls {
 
     }
 
+    private void sendGet(String command) throws Exception {
+
+        String url = this.local + command;
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        //optional default is GET
+        con.setRequestMethod("GET");
+
+        int responseCode = con.getResponseCode();
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+    }
+
     public void sendPost(String command) throws Exception {
         String url = this.local + command;
         URL obj = new URL(url);
@@ -41,5 +64,7 @@ public class HttpURLCalls {
         }
         in.close();
     }
+
+
 
 }
