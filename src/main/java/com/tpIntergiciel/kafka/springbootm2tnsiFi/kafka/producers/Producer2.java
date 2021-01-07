@@ -21,5 +21,4 @@ public class Producer2 {
 
         return new NewTopic(TOPIC,1,(short) 1);
     }
-
 }

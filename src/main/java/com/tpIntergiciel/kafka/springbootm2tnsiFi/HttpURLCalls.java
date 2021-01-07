@@ -70,6 +70,7 @@ public class HttpURLCalls {
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
+        System.out.println(url);
         //add reuqest header
         con.setRequestMethod("POST");
 

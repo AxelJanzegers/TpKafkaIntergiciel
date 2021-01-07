@@ -39,7 +39,8 @@ public class MainController {
 
     @GetMapping("/get_global_values")
     public void getGlobalValuesToTopic() {
-        this.producer3.sendMessage(globalService.getGlobal().toString());
+        Global global = globalService.getGlobal();
+        this.producer3.sendMessage(global.toString());
     }
 
     @PostMapping("/get_country_values")
