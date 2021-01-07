@@ -28,11 +28,9 @@ public class APIConsumer {
         /*
         * Ajout dans la bdd
         */
-        System.out.println(msg);
         Gson gson = new Gson();
         JsonMessage json = gson.fromJson(msg, JsonMessage.class);
         globalService.createGlobal(json.getGlobal());
         countryService.createCountries(json.getCountries());
-        System.out.println(json.getGlobal());
     }
 }
